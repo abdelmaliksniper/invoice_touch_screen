@@ -1,0 +1,433 @@
+/* --- By: Abdelmalik Yousif --- */
+
+@font-face{
+    font-family: 'Inconsolata';
+    src: url(../fonts/Inconsolata.otf);
+}
+.order-empty {
+    text-align: center;
+    margin: 48px;
+    color: #DDD;
+}
+.order .order-empty .fa {
+    font-size: 64px;
+}
+.order .order-empty h1 {
+    font-size: 20px;
+}
+.oe_hidden{
+    display: none !important;
+}
+.oe_invisible{
+    visibility: hidden !important;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+.oe_hidden{
+    display: none !important;
+}
+.window{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    display: table;
+    border: none;
+}
+.window .subwindow{
+    display: table-row;
+    width: 100%;
+    height: 100%;
+    background: #cccccc;
+}
+.window .subwindow.collapsed{
+    height: 0px;
+    background: #cccccc;
+}
+.window .subwindow-container .collapsed{
+    height: 0px;
+}
+.subwindow .subwindow-container{
+    display: table-cell;
+    position: relative;
+
+
+}
+/* firefox seems to ignore the relative positionning of the subwindow-container
+ * putting this inside subwindow-container fixes it.
+ */
+.subwindow .subwindow-container-fix{
+    height: 100%;
+    position: relative;
+    border-radius: 5px;
+}
+
+a {
+    text-decoration: none;
+    color: #555555;
+}
+
+ul, ol {
+    padding: 0;
+    margin: 0;
+}
+li {
+    list-style-type: none;
+}
+
+.leftpane {
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+        -ms-box-sizing: border-box;
+            box-sizing: border-box;
+    position:absolute;
+    left:0;
+    width:440px;
+    top:0px;
+    bottom:0;
+    border-right: solid 0px #CECBCB;
+    border-left: solid 2px #4C87A5;
+    border-top: solid 5px #4C87A5;
+    background: #e2e2e2;
+}
+
+.leftpane .pads {
+    border-top: solid 3px #555555;
+}
+
+/*  ********* The control buttons ********* */
+
+/*  ********* The actionpad (payment, set customer) ********* */
+
+.actionpad {
+    display: inline-block;
+    float: left;
+    padding: 0;
+    margin: 16px;
+    margin-top: 8px;
+    margin-right: 0;
+    text-align: center;
+    vertical-align: top;
+    width: 188px;
+    border-radius: 10;
+    border-top: 0px solid;
+    border-left: 0px solid;
+    border-color: #bfbfbf;
+
+}
+.actionpad .button {
+    position: relative;
+    display: inline-block;
+    height: 54px;
+    align: center;
+    width: 200%;
+    font-weight: bold;
+    vertical-align: middle;
+    color: #ffffff;
+    font-size: 16px;
+    border-radius: 10px;
+    border: 3px;
+    border-color: #444;
+    background: #4C87A5;
+    transition: all 150ms linear;
+}
+.actionpad .button:hover {
+    background: #efefef;
+    color: #4C87A5;
+}
+.actionpad .button:active {
+    background: black;
+    border-color: black;
+    color: white;
+}
+.actionpad .button:first-child {
+    border-top-left-radius: 4px;
+}
+.actionpad .button:last-child {
+    border-bottom-left-radius: 4px;
+}
+.actionpad .button.pay {
+    height: 62px;
+    border-color: #444
+}
+.actionpad .button.pay .pay-circle {
+    display: inline-block;
+    font-size: 30px;
+    
+    
+    background: rgb(86, 86, 86);
+    color: white;
+    width: 60px;
+    margin: auto;
+    border-radius: 30px;
+    border-color: #444
+
+
+}
+.actionpad .button.pay .pay-circle .fa {
+    position: relative;
+    top: -1px;
+    left: 3px;
+
+}
+
+.actionpad .button.set-customer{
+    padding-left: 40px;
+    padding-right: 40px;
+}
+.actionpad .button.set-customer.decentered {
+    padding-left: 40px;
+    padding-right: 5px;
+}
+.actionpad .button .fa-user {
+    position: absolute;
+    left: 13px;
+    top: 13px;
+    margin-right: 8px;
+    font-size: 18px;
+    background: rgba(255, 255, 255, 0.5);
+    line-height: 30px;
+    width: 30px;
+    border-radius: 100%;
+}
+
+/*  ********* The Numpad ********* */
+
+.numpad {
+    display: inline-block;
+    float: center;
+    text-align: center;
+    margin: 0px;
+    margin-top: 0px;
+    margin-left: 0px;
+
+    background: #cccccc;
+}
+.numpad button {
+    float: left;
+    height: 60px;
+    width: 100px;
+    font-weight: bold;
+    vertical-align: middle;
+    color: #555555;
+    border-radius: 0;
+    border: none;
+    border-right: 5px solid;
+    border-bottom: 5px solid;
+    border-left: 5px solid;
+    border-top: 5px solid;
+    border-color: #4C87A5;
+    transition: all 150ms linear;
+    background: #cccccc;
+}
+.numpad .ggg {
+
+    width: 200px;
+
+}
+.numpad button:hover {
+    background: #efefef;
+}
+.numpad button:active {
+    background: black;
+    color: white;
+    border-color: transparent;
+}
+.numpad button:nth-child(4) {
+    border-top-right-radius: 4px;
+}
+.numpad button:last-child {
+    border-bottom-right-radius: 4px;
+}
+.input-button {
+    font-size: 24px;
+    border-color: #4C87A5
+
+}
+.mode-button {
+    font-size: 14px;
+}
+.mode-button.selected-mode {
+    color: white;
+    background: #444C;
+    border-color: transparent;
+}
+.mode-button.selected-mode:hover {
+    background: #444C;
+    color: white;
+    border-color: transparent;
+}
+
+/*  ********* The right pane contains the screens and headers ********* */
+
+.rightpane {
+    position: absolute;
+    top: 0;
+    bottom:0;
+    left: 440px;
+    right: 0;
+    background: #4C87A5;
+    vertical-align: top;
+    -webkit-transform: translate3d(0,0,0);
+}
+
+
+/*  ********* The product list  ********* */
+
+.product-list {
+    padding-left: 60px;
+    padding-top: 20px;
+    text-align: center;
+    -webkit-transform: translate3d(0,0,0);
+
+}
+
+.product-list-scroller{
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+        -ms-box-sizing: border-box;
+            box-sizing: border-box;
+    width:100%;
+    height:100%;
+    overflow: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    -webkit-transform: translate3d(0,0,0);
+    background: #4C87A5;
+
+}
+.product-list-container {
+    position:absolute;
+    top:0px;
+    bottom:0px;
+    left:0px;
+    right:0px;
+
+}
+
+/*  a) the product list navigation bar */
+
+
+
+/*  b) the search box */
+
+.searchbox1 {
+
+    right: 2px;
+}
+.searchbox1 input {
+    width: 200px;
+    border: 1px solid #cecbcb;
+    padding: 10px 20px;
+    padding-left: 38px;
+    margin: 6px;
+    background: url("../img/search.png") no-repeat 15px;
+    background-color: white;
+    border-radius: 20px;
+    font-family: "Lato","Lucida Grande", Helvetica, Verdana, Arial;
+    font-size: 13px;
+}
+.searchbox1 input:focus {
+    outline: none;
+    box-shadow: 0px 0px 0px 2px rgb(153, 153, 255) inset;
+    color: rgb(153, 153, 255);
+}
+.search-clear {
+
+    width: 30px;
+    height: 30px;
+    top: 11px;
+    left: 11px;
+    cursor: pointer;
+}
+/*  ********* The Screens  ********* */
+
+.screen {
+    position:absolute;
+    text-align: center;
+    top:0px;
+    bottom:0px;
+    border: 10px;
+    border-color: #4C87A5;
+    width:100%;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.screen .layout-table {
+    border:none;
+    width:100%;
+    height:80%;
+}
+
+.screen .header-row {
+    border:none;
+    width:100%;
+    height:0px;
+}
+
+.screen .header-cell{
+    border:none;
+    width:100%;
+    height:0px;
+}
+.screen .content-row {
+    width:100%;
+    height:100%;
+}
+.screen .content-cell{
+    width:100%;
+}
+.screen .content-cell .content-container{
+    height:100%;
+    position:relative;
+}
+.order-container{
+    position: absolute;
+    top: 0px;
+    width:100%;
+    height: 100%;
+    background: white;
+}
+
+.order-scroller{
+    width:100%;
+    height:100%;
+    overflow: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+
+.order{
+    background: white;
+    padding-bottom: 8px;
+    padding-top: 8px;
+    font-size: 16px;
+    text-align: left;
+    max-width: 500px;
+    -webkit-transform: translate3d(0,0,0);
+}
+
+
+.order .summary{
+    width:100%;
+    text-align:right;
+    font-weight: bold;
+    margin-top:20px;
+    margin-bottom:10px;
+}
+.order .summary .line{
+    float: right;
+    margin-right:15px;
+    margin-left: 15px;
+    padding-top:5px;
+    border-top: solid 2px;
+    border-color:#777;
+}
+
+/*  ********* The PopupWidgets  ********* */

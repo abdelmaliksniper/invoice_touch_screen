@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+<!-- ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ -->
+    <t t-name="NumpadWidget_1">
+        <div class="numpad">
+            <div>
+            <button class="input-button number-char" data-action='1'>1</button>
+            <button class="input-button number-char" data-action='2'>2</button>
+            <button class="input-button number-char" data-action='3'>3</button>
+                <button class="mode-button" data-mode='quantity'>Qty</button>
+
+            <br />
+            <button class="input-button number-char" data-action='4'>4</button>
+            <button class="input-button number-char" data-action='5'>5</button>
+            <button class="input-button number-char" data-action='6'>6</button>
+                <button class="mode-button" data-mode='discount'>Discc</button>
+
+            <br />
+            <button class="input-button number-char" data-action='7'>7</button>
+            <button class="input-button number-char" data-action='8'>8</button>
+            <button class="input-button number-char" data-action='9'>9</button>
+                <button class="input-button numpad-backspace" data-action='CLEAR'>
+                <img style="pointer-events: none;" src="/invoice_touch_screen/static/src/img/backspace.png" width="24" height="21" />
+            </button>
+            <br />
+            <button class="input-button number-char dot" t-att-data-action='widget.decimal_separator'><t t-esc='widget.decimal_separator'/></button>
+            <button class="input-button number-char" data-action='0'>0</button>
+                </div>
+
+
+
+            <br />
+
+            <button class="oe_new ggg" data-mode='nn'>New</button>
+            <div class="placeholder-ActionpadWidget"></div>
+
+
+        </div>
+
+    </t>
+<!-- ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ -->
+<!-- ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ -->
+     <t t-name="ProductScreenWidget_1">
+        <div class="product-screen screen">
+            <div class="leftpane">
+                <div class='window'>
+                    <div class='subwindow'>
+                        <div class='subwindow-container'>
+                            <div class='subwindow-container-fix'>
+                                <div class="placeholder-OrderWidget"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class='subwindow collapsed'>
+                        <div class='subwindow-container'>
+                            <div class='subwindow-container-fix pads'>
+                                <!-- div class="placeholder-ActionpadWidget"></div -->
+                                <div class="control-buttons oe_hidden"></div>
+                                <div class="placeholder-NumpadWidget"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="rightpane">
+                <h1 align="center" style="color: #ffffff;">Create Invoice TouchScreen </h1>
+            <table style="background: #cccccc;border: solid 3px rgb(209, 209, 209);border-color: #444;float: center;table-layout: fixed;width: 100%">
+                <tr>
+                    <td align="right">
+                        <div class="searchbox1">
+                            <input placeholder="Search" style="color:#000000; font-size: 18px"/>
+                            <span class="search-clear"></span>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+                <table class="layout-table">
+
+                    <tr class="header-row">
+                        <td class="header-cell">
+                            <!-- span class="placeholder-ProductCategoriesWidget" / -->
+                        </td>
+                    </tr>
+
+                    <tr class="content-row">
+                        <td class="content-cell">
+                            <div class="content-container">
+                                <span class="placeholder-ProductListWidget" />
+                            </div>
+                        </td>
+                    </tr>
+
+                </table>
+            </div>
+        </div>
+    </t>
+<!-- ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ -->
+     <t t-name="ActionpadWidget_1">
+        <div class="actionpad">
+            <button class='button pay'>
+                Create Invoice
+            </button>
+        </div>
+     </t>
+<!-- ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ -->
+     <t t-name="ProductListWidget_1">
+        <div class='product-list-container'>
+            <div class="product-list-scroller touch-scrollable">
+                <div class="product-list">
+                    <table t-foreach="widget.pp" width="200" height="120" t-as="pp"  style="border: solid 10px #cccccc;float: left;table-layout: fixed">
+                        <tr>
+                            <td style="color: #FFFFFF;width: 60px;background: #07385C;overflow: hidden;height: 50%;text-align: center;"><b><t t-esc="pp.list_price"/></b></td>
+                            <td style="background: #444;overflow: hidden;white-space: nowrap;height: 50%;text-align: right;color: #FFFFFF"><t t-esc="pp.name"></t></td>
+                        </tr>
+                        <tr><td colspan="2" style="overflow: hidden">
+                        <div id="myDIV" class="eo_myDIV">
+                            <input t-att-value='pp.id' hidden="hidden"/><input t-att-value='pp.name' hidden="hidden"/><input t-att-value='pp.list_price' hidden="hidden"/><input t-att-value='pp.property_account_income_id' hidden="hidden"/>
+                            <img class="im_im" id="im_id" width="200" height="120" t-att-src="'data:image/jpg;base64,'+pp.image"/>
+                        </div>
+                        </td></tr>
+
+                    </table>
+                </div>
+            </div>
+            <span class="placeholder-ScrollbarWidget" />
+        </div>
+     </t>
+<!-- ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ -->
+     <t t-name="OrderWidget_1">
+        <div class="order-container">
+            <div class="order-scroller touch-scrollable">
+                <div t-if="widget.oo.length > 0">
+                                <span class="line"><h4 >Total: <b><t t-esc="widget.total"/></b></h4></span>
+                </div>
+                <div class="order">
+                    <!-- t t-if="widget.oo.length === 0" >
+                        <div class='order-empty'>
+                            <i class='fa fa-shopping-cart' />
+                            <h1>Your shopping cart is empty</h1>
+                        </div>
+                    </t -->
+                    <!-- t t-if="orderlines.length > 0" -->
+                    <t>
+                        <ul class="orderlines"></ul>
+                        <div class="summary clearfix">
+                            <div class="line">
+                                    <table name="tbl_id" class="eo_tbl" t-foreach="widget.oo" t-as="oo" t-att-data-id='oo.id' width="100%" style="background: #cccccc;border-radius: 0px;border: solid 3px rgb(209, 209, 209);border-color: #4C87A5;float: right;table-layout: fixed">
+
+                                        <tr>
+                                            <td colspan="2" style="color: #444;overflow: hidden;white-space: nowrap;height: 50%"><b><t t-esc="oo.name"/></b></td>
+                                            <td style="color: #444;overflow: hidden;white-space: nowrap;height: 50%"><b>Price:</b> <t t-esc="oo.pri"/></td>
+                                            <td colspan="2" style="background: #ffffff;width: 10%;word-wrap: break-word;text-align: left;color: #444;overflow: hidden;white-space: nowrap;height: 50%">
+                                                <div id="myDIV_1" class="eo_myDIV_1">
+                            <input t-att-value='oo.id' hidden="hidden"/>
+                                                    <button class="cc" align="left">
+                                                  <img class="ord_im_im" id="ord_im_id" src="/invoice_touch_screen/static/src/img/backspace.png" width="22" height="16"/>
+                                                  </button>
+                                             </div>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                             <td align="left" style="color: #444"><b>Qty:</b> <t t-esc="oo.qty"/></td>
+                                             <td align="left" style="color: #444"><b>Disc:</b> <t t-esc="oo.disc"/></td>
+                                             <td align="left" style="color: #444"><b>SubTotal:</b> <t t-esc="oo.subb"/></td>
+                                        </tr>
+                                    </table>
+
+                            </div>
+
+                        </div>
+                    </t>
+                </div>
+            </div>
+        </div>
+     </t>
+<!-- ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ -->
+</templates>
