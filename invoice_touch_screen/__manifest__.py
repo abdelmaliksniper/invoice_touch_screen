@@ -21,6 +21,9 @@
         'views/malik_view.xml',
         'data/data.xml',
     ],
+    'images': [
+        'static/description/product_select.png',
+    ],
 
     'demo': [
         #'demo/demo.xml',
