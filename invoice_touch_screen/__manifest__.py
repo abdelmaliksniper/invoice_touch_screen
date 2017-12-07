@@ -15,7 +15,7 @@
     'category': 'Generic Modules',
     'version': '1.0',
     'currency': 'EUR',
-    'price': 95.0,
+    'price': 105.0,
     'depends': ['base', 'account'],
     'data': [
         'views/malik_view.xml',
