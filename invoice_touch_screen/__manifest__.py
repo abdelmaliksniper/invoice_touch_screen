@@ -9,7 +9,7 @@
         
     """,
 
-    'author': "Abdelmalik Yousif",
+    'author': "Ad Mk Joseph",
     'sequence': 1,
     'website': "",
     'category': 'Generic Modules',
